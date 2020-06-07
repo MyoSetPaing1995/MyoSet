@@ -1,0 +1,15 @@
+docker create \
+  --name=librespeed \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/London \
+  -e PASSWORD=PASSWORD \
+  -e DB_TYPE=sqlite `#optional` \
+  -e DB_NAME=DB_NAME `#optional` \
+  -e DB_HOSTNAME=DB_HOSTNAME `#optional` \
+  -e DB_USERNAME=DB_USERNAME `#optional` \
+  -e DB_PASSWORD=DB_PASSWORD `#optional` \
+  -p 80:80 \
+  -v /path/to/appdata/config:/config \
+  --restart unless-stopped \
+  linuxserver/librespeed
